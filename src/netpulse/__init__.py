@@ -1,8 +1,8 @@
 """NetPulse: lightweight network diagnostics for Python."""
 
 from .exceptions import NetPulseError, SystemUtilityNotFoundError
-from .models import PingResult, PortCheckResult, TracerouteHop, TracerouteResult
 from .icmp import ping
+from .models import PingResult, PortCheckResult, TracerouteHop, TracerouteResult
 from .ports import check_port
 from .routes import traceroute
 
