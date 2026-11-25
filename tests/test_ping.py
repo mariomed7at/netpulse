@@ -49,7 +49,14 @@ def test_ping_missing_executable(monkeypatch):
 def test_ping_runs_command(monkeypatch):
     monkeypatch.setattr(ping_module.shutil, "which", lambda _: "/bin/ping")
     monkeypatch.setattr(ping_module.platform, "system", lambda: "Linux")
-    fake = Mock(stdout="64 bytes from 127.0.0.1: time=0.2 ms\\n1 packets transmitted, 1 received, 0% packet loss", stderr="", returncode=0)
+    fake = Mock(
+        stdout=(
+            "64 bytes from 127.0.0.1: time=0.2 ms" + chr(10)
+            + "1 packets transmitted, 1 received, 0% packet loss"
+        ),
+        stderr="",
+        returncode=0,
+    )
     monkeypatch.setattr(ping_module.subprocess, "run", lambda *a, **k: fake)
     result = ping("127.0.0.1", count=1)
     assert result.is_reachable

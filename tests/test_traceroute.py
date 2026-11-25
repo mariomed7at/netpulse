@@ -43,6 +43,10 @@ def test_traceroute_missing_utility(monkeypatch):
 
 
 def test_parse_traceroute_hostname_destination_from_header():
-    output = "traceroute to example.com (93.184.216.34), 20 hops max\\n 1  192.0.2.1  1.0 ms\\n 2  93.184.216.34  10.0 ms\\n"
+    output = chr(10).join([
+        "traceroute to example.com (93.184.216.34), 20 hops max",
+        " 1  192.0.2.1  1.0 ms",
+        " 2  93.184.216.34  10.0 ms",
+    ])
     result = _parse_traceroute_output("example.com", output, ["traceroute", "example.com"])
     assert result.completed
