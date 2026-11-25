@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use NetPulse in your work, please cite the repository."
+title: "NetPulse: Network Diagnostics Toolkit"
+type: software
+license: MIT
+repository-code: "https://github.com/mariomed7at/netpulse"
+version: 0.1.0
+date-released: 2026-11-25
+authors:
+  - name: "NetPulse contributors"

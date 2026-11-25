@@ -1,0 +1,32 @@
+name: Bug report
+description: Report a reproducible defect in NetPulse.
+labels: ["bug"]
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: What happened?
+      description: Describe the observed behavior and what you expected instead.
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: NetPulse and Python versions
+      placeholder: "NetPulse 0.1.0; Python 3.12"
+    validations:
+      required: true
+  - type: input
+    id: platform
+    attributes:
+      label: Operating system
+      placeholder: "Ubuntu 24.04 / Windows 11 / macOS"
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction steps
+      description: Remove credentials, sensitive hostnames, and private network details.
+    validations:
+      required: true
